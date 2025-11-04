@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/tipo_corte.css" />
+    <title>Escolha o tipo de carne</title>
+  </head>
+  <body>
+    <main>
+      <div id="Carrinho" class="visivel">
+        <a href="Carrinho.html" id="links"> Carrinho</a>
+      </div>
+
+      <div class="header">
+        <h1>Escolha o Corte de Bovina</h1>
+        <p class="subtitle">Seja Bem-vindo!</p>
+      </div>
+
+      <div class="container" id="cutsContainer">
+        <a href="bovina.html" class="card-link" data-cut="Picanha">
+          <div class="card">
+            <p class="card-text">Picanha</p>
+          </div>
+        </a>
+        <a href="suina.html" class="card-link" data-cut="Alcatra">
+          <div class="card">
+            <p class="card-text">Alcatra</p>
+          </div>
+        </a>
+        <a href="frango.html" class="card-link" data-cut="Contrafilé">
+          <div class="card">
+            <p class="card-text">Contrafilé</p>
+          </div>
+        </a>
+        <a href="peixe.html" class="card-link" data-cut="Maminha">
+          <div class="card">
+            <p class="card-text">Maminha</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="selection-indicator" id="selectionIndicator"></div>
+
+      <div class="button-container">
+        <button class="add-button" id="addButton" disabled>
+          Adicionar ao Pedido
+        </button>
+      </div>
+    </main>
+
+    <script src="../js/corte.js"></script>
+  </body>
+</html>
