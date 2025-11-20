@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seletor de Produto</title>
+    <link rel="stylesheet" href="./../styles/quantidade.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="price-box">
+        <div class="price-label">Valor:</div>
+        <div class="price-value">R$ <span id="price">50</span></div>
+      </div>
+
+      <div class="controls">
+        <div class="quantity-control">
+          <button class="quantity-btn" id="decrease">−</button>
+          <div class="quantity-display"><span id="quantity">20</span>g</div>
+          <button class="quantity-btn" id="increase">+</button>
+        </div>
+
+        <button class="cart-btn" id="addToCart">Carrinho</button>
+      </div>
+    </div>
+
+    <div class="notification" id="notification">Adicionado ao carrinho!</div>
+
+    <script>
+      let quantity = 20;
+      const pricePerGram = 2.5;
+      const minQuantity = 10;
+      const maxQuantity = 500;
+
+      const quantityEl = document.getElementById("quantity");
+      const priceEl = document.getElementById("price");
+      const decreaseBtn = document.getElementById("decrease");
+      const increaseBtn = document.getElementById("increase");
+      const addToCartBtn = document.getElementById("addToCart");
+      const notification = document.getElementById("notification");
+
+      function updateDisplay() {
+        quantityEl.textContent = quantity;
+        const totalPrice = (quantity * pricePerGram).toFixed(2);
+        priceEl.textContent = totalPrice;
+
+        decreaseBtn.disabled = quantity <= minQuantity;
+        increaseBtn.disabled = quantity >= maxQuantity;
+      }
+
+      decreaseBtn.addEventListener("click", () => {
+        if (quantity > minQuantity) {
+          quantity -= 10;
+          updateDisplay();
+        }
+      });
+
+      increaseBtn.addEventListener("click", () => {
+        if (quantity < maxQuantity) {
+          quantity += 10;
+          updateDisplay();
+        }
+      });
+
+      addToCartBtn.addEventListener("click", () => {
+        notification.classList.add("show");
+
+        setTimeout(() => {
+          notification.classList.remove("show");
+        }, 2000);
+      });
+
+      updateDisplay();
+    </script>
+  </body>
+</html>

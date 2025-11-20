@@ -4,6 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        background: #f7f0e8;
+        font-family: "Segoe UI", sans-serif;
+
+        /* Centralizar a caixa no meio da tela */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100vh;
+        margin: 0;
+      }
+
+      .caixa {
+        width: 380px; /* Aumentei o tamanho */
+        padding: 25px; /* Mais espaçamento interno */
+        background: #ffffff;
+        border: 1px solid #d8d8d8;
+        border-radius: 12px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .linha {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        font-size: 17px; /* Texto maior */
+      }
+
+      hr {
+        border: none;
+        border-top: 1px dashed #ccc;
+        margin: 10px 0;
+      }
+
+      #total {
+        font-size: 18px; /* Total maior */
+        color: #333;
+      }
+
+      .btn {
+        margin-top: 25px;
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 10px;
+        background-color: #c0392b;
+        color: white;
+        cursor: pointer;
+        font-size: 17px;
+        font-weight: bold;
+        transition: 0.2s;
+      }
+
+      .btn:hover {
+        background-color: #a83226;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="caixa">
+      <div id="lista-pedidos"></div>
+
+      <div class="linha">
+        <strong>Valor total</strong>
+        <strong id="total">R$ 0</strong>
+      </div>
+      <hr />
+
+      <button class="btn">fazer um pedido</button>
+    </div>
+
+    <script>
+      const lista = document.getElementById("lista-pedidos");
+      const total = document.getElementById("total");
+
+      // Carrega do localStorage
+      const pedidosSalvos = JSON.parse(localStorage.getItem("pedido")) || [];
+
+      let soma = 0;
+
+      pedidosSalvos.forEach((item) => {
+        lista.innerHTML += `
+          <div class="linha">
+            <span>${item.corte} (${item.quantidade}g)</span>
+            <span>R$ ${item.quantidade * 0.1}</span>
+          </div>
+          <hr>
+        `;
+        soma += item.quantidade * 0.1;
+      });
+
+      total.innerText = "R$ " + soma;
+    </script>
+  </body>
 </html>

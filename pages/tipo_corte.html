@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/tipo_corte.css" />
     <title>Escolha o tipo de carne</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./../styles/tipo_corte.css" />
   </head>
   <body>
     <main>
       <div id="Carrinho" class="visivel">
-        <a href="Carrinho.html" id="links"> Carrinho</a>
+        <a href="#" id="links">Carrinho</a>
       </div>
 
       <div class="header">
@@ -18,26 +22,77 @@
       </div>
 
       <div class="container" id="cutsContainer">
-        <a href="bovina.html" class="card-link" data-cut="Picanha">
+        <div class="card-link" data-cut="Picanha">
           <div class="card">
             <p class="card-text">Picanha</p>
+            <div class="quantity-control">
+              <button class="quantity-btn minus">-</button>
+              <input
+                type="number"
+                class="quantity-input"
+                value="100"
+                min="100"
+                step="100"
+                readonly
+              />
+              <button class="quantity-btn plus">+</button>
+            </div>
           </div>
-        </a>
-        <a href="suina.html" class="card-link" data-cut="Alcatra">
+        </div>
+
+        <div class="card-link" data-cut="Alcatra">
           <div class="card">
             <p class="card-text">Alcatra</p>
+            <div class="quantity-control">
+              <button class="quantity-btn minus">-</button>
+              <input
+                type="number"
+                class="quantity-input"
+                value="100"
+                min="100"
+                step="100"
+                readonly
+              />
+              <button class="quantity-btn plus">+</button>
+            </div>
           </div>
-        </a>
-        <a href="frango.html" class="card-link" data-cut="Contrafilé">
+        </div>
+
+        <div class="card-link" data-cut="Contrafilé">
           <div class="card">
             <p class="card-text">Contrafilé</p>
+            <div class="quantity-control">
+              <button class="quantity-btn minus">-</button>
+              <input
+                type="number"
+                class="quantity-input"
+                value="100"
+                min="100"
+                step="100"
+                readonly
+              />
+              <button class="quantity-btn plus">+</button>
+            </div>
           </div>
-        </a>
-        <a href="peixe.html" class="card-link" data-cut="Maminha">
+        </div>
+
+        <div class="card-link" data-cut="Maminha">
           <div class="card">
             <p class="card-text">Maminha</p>
+            <div class="quantity-control">
+              <button class="quantity-btn minus">-</button>
+              <input
+                type="number"
+                class="quantity-input"
+                value="100"
+                min="100"
+                step="100"
+                readonly
+              />
+              <button class="quantity-btn plus">+</button>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
 
       <div class="selection-indicator" id="selectionIndicator"></div>
@@ -49,6 +104,6 @@
       </div>
     </main>
 
-    <script src="../js/corte.js"></script>
+    <script src="./../js/corte.js"></script>
   </body>
 </html>
