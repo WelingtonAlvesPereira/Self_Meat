@@ -70,16 +70,17 @@ h1 {
 }
 
 .container {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  animation: fadeInUp 0.8s ease-out;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
+
 .card-link {
-  text-decoration: none;
   display: block;
 }
+
 
 .card {
   position: relative;
@@ -311,6 +312,43 @@ h1 {
     font-size: 1.1rem;
   }
 }
+
+#cutsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.search-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 2px solid #f97316;
+  outline: none;
+  font-size: 1rem;
+  background: #fff;
+  color: #7c2d12;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  border-color: #c2410c;
+  box-shadow: 0 0 4px #ffa366;
+}
+
 
 @media (max-width: 480px) {
   h1 {
