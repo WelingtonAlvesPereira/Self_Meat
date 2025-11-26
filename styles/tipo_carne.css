@@ -36,6 +36,7 @@ main > div p {
   font-size: 1.1rem;
 }
 
+/* --- CONTAINER TIPOS DE CARNE E CORTES --- */
 .conteiner {
   width: 100%;
   display: grid;
@@ -54,31 +55,487 @@ main > div p {
   border-radius: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
 }
 
 .mine-conteiner:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   background-color: #fed7aa;
+  border-color: #fb923c;
+}
+
+.mine-conteiner:active {
+  transform: translateY(-2px);
 }
 
 .mine-conteiner p {
   font-size: 1.3rem;
   font-weight: 600;
   color: #7c2d12;
+  text-align: center;
+}
+
+/* --- CARD-LINK E CARD --- */
+.card-link {
+  display: block;
+  text-decoration: none;
+}
+
+.card {
+  position: relative;
+  min-height: 220px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(124, 45, 18, 0.15);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.card:hover::before {
+  opacity: 0.3;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(124, 45, 18, 0.25);
+  border-color: #fb923c;
+}
+
+.card:active {
+  transform: translateY(-4px) scale(0.98);
+}
+
+.card-text {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #7c2d12;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-text {
+  color: #451a03;
+  transform: scale(1.05);
+  font-weight: 700;
+}
+
+/* --- QUANTITY CONTROL --- */
+.quantity-control {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.quantity-btn {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #ea580c;
+  background: white;
+  color: #ea580c;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-btn:hover {
+  background: #ea580c;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+}
+
+.quantity-btn:active {
+  transform: scale(0.95);
+}
+
+.quantity-input {
+  width: 70px;
+  text-align: center;
+  font-size: 1rem;
+  padding: 6px;
+  border: 2px solid #fed7aa;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #7c2d12;
+  background: white;
+}
+
+/* --- ADD TO CART BUTTON --- */
+.add-to-cart-btn {
+  position: relative;
+  z-index: 1;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: #ea580c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+}
+
+.add-to-cart-btn:hover {
+  background-color: #c2410c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.4);
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(0);
+}
+
+/* --- BOTÃO VOLTAR --- */
+.back-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #ea580c;
+  color: white;
+  border: 2px solid #ea580c;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+}
+
+.back-button:hover {
+  background-color: #c2410c;
+  border-color: #9a3412;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.4);
+}
+
+.back-button:active {
+  transform: translateY(0);
+}
+
+/* --- BOTÃO FINALIZAR --- */
+.finish-button {
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #ea580c;
+  color: white;
+  border: 2px solid #ea580c;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+}
+
+.finish-button:hover {
+  background-color: #c2410c;
+  border-color: #9a3412;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.4);
+}
+
+.finish-button:active {
+  transform: translateY(0);
+}
+
+.finish-button:disabled {
+  background-color: #ccc;
+  border-color: #999;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* --- BOTÃO CARRINHO --- */
+.cart-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #ea580c;
+  color: white;
+  border: 2px solid #ea580c;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.cart-button:hover {
+  background-color: #c2410c;
+  border-color: #9a3412;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.4);
+}
+
+.cart-button:active {
+  transform: translateY(0);
+}
+
+.cart-button.hidden {
+  display: none;
+}
+
+/* --- BOTÃO CONTAINER --- */
+.button-container {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.button-container .back-button {
+  flex: 0 0 auto;
+  align-self: auto;
+  margin-top: 0;
+}
+
+.button-container .finish-button {
+  flex: 1;
 }
 
 a {
   text-decoration: none;
 }
 
-/* Responsivo */
-@media (max-width: 600px) {
-  .conteiner {
-    grid-template-columns: 1fr;
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+  main {
+    padding: 18px;
+    gap: 25px;
   }
 
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .conteiner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .mine-conteiner {
+    height: 110px;
+  }
+
+  .mine-conteiner p {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    min-height: 200px;
+    gap: 10px;
+  }
+
+  .card-text {
+    font-size: 1.3rem;
+  }
+
+  .quantity-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .back-button,
+  .finish-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .add-to-cart-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .cart-button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 600px) {
   main {
     padding: 15px;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  main > div p {
+    font-size: 1rem;
+  }
+
+  .conteiner {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .mine-conteiner {
+    height: 100px;
+  }
+
+  .mine-conteiner p {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    min-height: 180px;
+    gap: 8px;
+    padding: 15px;
+  }
+
+  .card-text {
+    font-size: 1.2rem;
+  }
+
+  .quantity-control {
+    gap: 8px;
+  }
+
+  .quantity-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .quantity-input {
+    width: 60px;
+    font-size: 0.9rem;
+  }
+
+  .back-button,
+  .finish-button {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .button-container .back-button {
+    width: 100%;
+  }
+
+  .add-to-cart-btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .cart-button {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    top: 12px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    padding: 12px;
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .conteiner {
+    gap: 10px;
+  }
+
+  .mine-conteiner {
+    height: 90px;
+  }
+
+  .mine-conteiner p {
+    font-size: 1rem;
+  }
+
+  .card {
+    min-height: 160px;
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .card-text {
+    font-size: 1.1rem;
+  }
+
+  .quantity-control {
+    gap: 6px;
+  }
+
+  .quantity-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+
+  .quantity-input {
+    width: 55px;
+    font-size: 0.8rem;
+  }
+
+  .back-button,
+  .finish-button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .add-to-cart-btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .cart-button {
+    padding: 6px 12px;
+    font-size: 0.75rem;
   }
 }
