@@ -70,14 +70,13 @@ function renderCortes(tipo) {
           />
           <button class="quantity-btn plus">+</button>
         </div>
-        <button class="add-to-cart-btn" data-cut="${corte}">Adicionar ao Pedido</button>
       </div>
     </div>
   `).join("");
 
   // Reattach event listeners
   attachQuantityListeners();
-  attachAddToCartListeners();
+  attachCardClickListeners();
 }
 
 function attachQuantityListeners() {
@@ -100,13 +99,16 @@ function attachQuantityListeners() {
   });
 }
 
-function attachAddToCartListeners() {
-  document.querySelectorAll(".add-to-cart-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
+function attachCardClickListeners() {
+  document.querySelectorAll(".card-link").forEach((cardLink) => {
+    cardLink.addEventListener("click", (e) => {
+      // Não adicionar se clicou nos botões de quantidade
+      if (e.target.classList.contains("quantity-btn") || e.target.classList.contains("quantity-input")) {
+        return;
+      }
 
-      const card = btn.closest(".card");
-      const corte = btn.dataset.cut;
+      const card = cardLink.querySelector(".card");
+      const corte = cardLink.dataset.cut;
       const quantidade = parseInt(card.querySelector(".quantity-input").value);
 
       // Adicionar ao pedidos

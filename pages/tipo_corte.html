@@ -3,119 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Self meat</title>
+    <link rel="stylesheet" href="../styles/tipo_carne.css" />
     <link rel="icon" type="image/png" href="../img/icon.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./../styles/tipo_corte.css" />
+    <title>Self meat</title>
   </head>
   <body>
     <main>
-      <div id="Carrinho" class="visivel">
-        <a href="#" id="links">Carrinho</a>
+      <a href="#" id="cartButton" class="cart-button hidden">
+        🛒 Carrinho (0)
+      </a>
+
+      <div>
+        <h1>Escolha o tipo de carne</h1>
+        <p>Seja Bem-vindo!</p>
       </div>
 
-      <div class="header">
-        <h1>Escolha o Corte de Bovina</h1>
-        <p class="subtitle">Seja Bem-vindo!</p>
+      <section id="carneSelection" class="conteiner">
+        <a href="#" class="mine-conteiner" data-type="bovina">
+          <p>🥩 Bovina</p>
+        </a>
+        <a href="#" class="mine-conteiner" data-type="suina">
+          <p>🐷 Suína</p>
+        </a>
+        <a href="#" class="mine-conteiner" data-type="frango">
+          <p>🐔 Frango</p>
+        </a>
+        <a href="#" class="mine-conteiner" data-type="peixe">
+          <p>🐟 Peixe</p>
+        </a>
+      </section>
+
+      <div id="cutsContainer" class="conteiner" style="display: none;">
       </div>
 
-      <!-- CAMPO DE BUSCA -->
-      <div class="search-wrapper">
-        <input
-          type="search"
-          id="searchInput"
-          class="search-input"
-          placeholder="Qual corte você deseja?"
-          autocomplete="off"
-        />
-      </div>
-
-      <div class="container" id="cutsContainer">
-        <div class="card-link" data-cut="Picanha">
-          <div class="card">
-            <p class="card-text">Picanha</p>
-            <div class="quantity-control">
-              <button class="quantity-btn minus">-</button>
-              <input
-                type="number"
-                class="quantity-input"
-                value="100"
-                min="100"
-                step="100"
-                readonly
-              />
-              <button class="quantity-btn plus">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-link" data-cut="Alcatra">
-          <div class="card">
-            <p class="card-text">Alcatra</p>
-            <div class="quantity-control">
-              <button class="quantity-btn minus">-</button>
-              <input
-                type="number"
-                class="quantity-input"
-                value="100"
-                min="100"
-                step="100"
-                readonly
-              />
-              <button class="quantity-btn plus">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-link" data-cut="Contrafilé">
-          <div class="card">
-            <p class="card-text">Contrafilé</p>
-            <div class="quantity-control">
-              <button class="quantity-btn minus">-</button>
-              <input
-                type="number"
-                class="quantity-input"
-                value="100"
-                min="100"
-                step="100"
-                readonly
-              />
-              <button class="quantity-btn plus">+</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-link" data-cut="Maminha">
-          <div class="card">
-            <p class="card-text">Maminha</p>
-            <div class="quantity-control">
-              <button class="quantity-btn minus">-</button>
-              <input
-                type="number"
-                class="quantity-input"
-                value="100"
-                min="100"
-                step="100"
-                readonly
-              />
-              <button class="quantity-btn plus">+</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="selection-indicator" id="selectionIndicator"></div>
-
-      <div class="button-container">
-        <button class="add-button" id="addButton" disabled>
-          Adicionar ao Pedido
-        </button>
+      <div id="buttonContainer" class="button-container" style="display: none;">
+        <button id="backBtn" class="back-button">← Voltar</button>
+        <button id="finishBtn" class="finish-button">Finalizar Pedido</button>
       </div>
     </main>
 
-    <script src="../js/corte.js"></script>
+    <script src="../js/tipo_carne.js"></script>
   </body>
 </html>
